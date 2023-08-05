@@ -355,7 +355,7 @@ void QUAD7SHIFT::print(const uint16_t number) {
     }    
     else {
         // Convert the number to a scaled integer representation (since it's an integer, no decimal point is needed)
-        uint8_t scaledNumber = number;
+        uint16_t scaledNumber = number;
         // Print the scaled number without a decimal point
         printNumber(scaledNumber, 0);
     }
