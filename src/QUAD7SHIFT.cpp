@@ -116,7 +116,7 @@ unsigned int QUAD7SHIFT::fixedPointRepresentation(float number, uint8_t decimalP
 }
 
 // Function to print a number on a 4-digit seven-segment display with a specified decimal point position
-void QUAD7SHIFT::printNumber(uint8_t number, uint8_t decimalPointPosition) {
+void QUAD7SHIFT::printNumber(uint16_t number, uint8_t decimalPointPosition) {
     /* Print the given number on the 4-digit seven-segment display with a specified decimal point
       position 
     */
