@@ -69,7 +69,7 @@
                 unsigned long getRefreshRate(void);
                 void setRefreshRate(unsigned long);
                 void print(const float, uint8_t);
-                void print(const uint8_t );
+                void print(const uint16_t );
                 void print(const char* );
 		};
 #endif

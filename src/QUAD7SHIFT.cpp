@@ -339,7 +339,7 @@ void QUAD7SHIFT::print(const float number, uint8_t decimalPointPosition) {
 }
 
 // Function to print an unsigned integer on the 4-digit seven-segment display
-void QUAD7SHIFT::print(const uint8_t number) {
+void QUAD7SHIFT::print(const uint16_t number) {
     // If the number is negative, print "NEG" and return
     if (number < 0) {
         setRefreshRate(DEFAULT_REFRESH_RATE);
