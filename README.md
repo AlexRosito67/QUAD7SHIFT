@@ -49,6 +49,7 @@ Overall, the QUAD7SHIFT library is a valuable resource for Arduino projects invo
   
     [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/2jVDQSVcXQ0/0.jpg)](https://youtu.be/2jVDQSVcXQ0) 
     
+    [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/irkmbyNkbE4/0.jpg)](https://youtu.be/irkmbyNkbE4)  
 
 ## Examples
 
@@ -86,10 +87,15 @@ QUAD7SHIFT display(COMMON_ANODE);
 
 void setup() {
   // Initialize the QUAD7SHIFT library
-  display.begin();
-
-  // Print a number on the display
-  display.print(1234);
+  display.begin(); // Uses a default refresh rate of 1000
+  /* Or you could use
+   * display.begin(1000); 
+   * which is the default display refresh rate, of course you can change it to your needs
+  */
+  display.print(1234);  // Print an integer number on the display
+  display.print(12.34); // Print a float number on the display
+  display("GOOD");      // Print a char string on the display    
+  display("G.O.O.D.");  // Print a char string with dots on the display 
 }
 
 void loop() {
