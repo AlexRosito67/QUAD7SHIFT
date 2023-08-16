@@ -94,8 +94,8 @@ void setup() {
   */
   display.print(1234);  // Print an integer number on the display
   display.print(12.34); // Print a float number on the display
-  display("GOOD");      // Print a char string on the display    
-  display("G.O.O.D.");  // Print a char string with dots on the display 
+  display.print("GOOD");      // Print a char string on the display    
+  display.print("G.O.O.D.");  // Print a char string with dots on the display 
 }
 
 void loop() {
