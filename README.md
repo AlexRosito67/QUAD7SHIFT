@@ -92,13 +92,13 @@ void setup() {
    * display.begin(1000); 
    * which is the default display refresh rate, of course you can change it to your needs
   */
-  display.print(1234);  // Print an integer number on the display
-  display.print(12.34); // Print a float number on the display
-  display.print("GOOD");      // Print a char string on the display    
-  display.print("G.O.O.D.");  // Print a char string with dots on the display 
 }
 
 void loop() {
   // Add your code here
+  display.print(1234);  // Print an integer number on the display
+  display.print(12.34); // Print a float number on the display
+  display.print("GOOD");      // Print a char string on the display    
+  display.print("G.O.O.D.");  // Print a char string with dots on the display 
 }
 
