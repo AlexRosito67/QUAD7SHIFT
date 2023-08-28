@@ -21,7 +21,7 @@ void setup(){
 void loop(){
   myDisplay.print("CNT ");     // We are limited to 4 characters. Yes the space is a character
   myDisplay.print("DOWN");     // We have 4 characters
-  myDisplay.print("S.T.R.T."); // But wait!, There are 7 characters!. Not quite. There are four but each has its period on.
+  myDisplay.print("S.T.R.T."); // But wait!, There are 8 characters!. Not quite. There are four but each has its period on.
   for(unsigned int i=0; i<6; i++){
     myDisplay.print(5-i);      // Printing an integer.
   }

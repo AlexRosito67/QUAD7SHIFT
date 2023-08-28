@@ -70,7 +70,7 @@ void QUAD7SHIFT::printDigit(uint8_t number, uint8_t position, bool point) {
     uint8_t digiBits = 0x10 << position;
 
     /* Read the bit pattern corresponding to the specified digit from the lookup table in program
-       memory (Definition located in the QUAD7SHIFTata.h header file).
+       memory (Definition located in the QUAD7SHIFTData.h header file).
        The lookup table 'digits' contains the bit patterns for digits 0 to 9 (stored as 8-bit
        values) and other characters in program memory.
     */
@@ -130,7 +130,7 @@ void QUAD7SHIFT::printNumber(uint16_t number, uint8_t decimalPointPosition) {
     digitsToPrint[3] = (number / 1000) % 10;  // Extract the fourth rightmost digit (thousands place)
     
     /* The following iteration is performed to eliminate preceding zeroes from a number.
-       For example: If we want to display 10 we don't want the display to pring "0010"
+       For example: If we want to display 10 we don't want the display to print "0010"
     */
     // Iterate from the leftmost digit to the decimal point position or the leftmost non-zero digit.
     for (uint8_t i = 3; i >= decimalPointPosition; i--) {
