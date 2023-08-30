@@ -17,6 +17,7 @@ Overall, the QUAD7SHIFT library is a valuable resource for Arduino projects invo
 - [Installation](#installation)
 - [Features](#features)
 - [Usage](#usage)
+- [Methods](#methods)
 - [Examples](#examples)
 - [Dependencies](#dependencies)
 - [Contributing](#contributing)
@@ -76,7 +77,16 @@ Please read CONTRIBUTING.md for information about contributing.
 
 Please read LICENSE.md.
 
+## Methods
 
+    - begin();        / Sets the refresh rate of the display to a default of 1000 milliseconds.
+    - begin(freshRate); / Sets the refresh rate to the desired refresh rate.
+    - getRefreshRate(); / Gets the refresh rate in an interactive manner.
+    - setRefreshRate(refreshRate); / Sets the desired refresh rate in an interactive manner. 
+    - print(integer); / MAX 9999 
+    - print(float);   / MAX 999.9 
+    - print(string);  / MAX LENGTH 4 or in the case of including points MAX LENGTH 8
+    
 ## Usage
 
 ```cpp
