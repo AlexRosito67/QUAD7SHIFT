@@ -1,5 +1,5 @@
 /*
-  QUAD7SHIFT.h - Complimentary header of th library for driving 4 digits seven segment displays for modules that use 74HC595 shiftregisters.
+  QUAD7SHIFTData.h - Complimentary header of th library for driving 4 digits seven segment displays for modules that use 74HC595 shiftregisters.
   For ARDUINO UNO and NANO and ATtiny85 (or other ATtinys that use the same USI (Universal Serial Interface) module and same pins as the ATtiny85)
   Created by Alex Rosito, July 24, 2023.
   Released into the public domain.
