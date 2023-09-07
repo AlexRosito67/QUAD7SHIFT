@@ -5,9 +5,9 @@
   Released into the public domain.
   © Alex Rosito
 */
-#ifndef QUAD7SHIFTata_h
+#ifndef QUAD7SHIFTData_h
    
-	#define QUAD7SHIFTata_h
+	#define QUAD7SHIFTData_h
     
         const unsigned int powersOf10[5] PROGMEM = {1, 10, 100, 1000, 10000};
         const uint8_t digits[29] PROGMEM = {
