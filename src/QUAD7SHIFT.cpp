@@ -172,58 +172,58 @@ uint8_t QUAD7SHIFT::getTableIndex(char character)
         // Convert the character to uppercase to handle both uppercase and lowercase inputs
         character = toupper(character);
         // Check the character against known specific characters to find their respective indices
-        if (character == 'I') {
-            return 1;
-        } else if (character == 'Z') {
-            return 2;
-        } else if (character == 'S') {
-            return 5;
-        } else if (character == 'A') {
-            return 10;
-        } else if (character == 'B') {
-            return 8;
-        } else if (character == 'C') {
-            return 12;
-        } else if (character == 'D') {
-            return 13;
-        } else if (character == 'E') {
-            return 14;
-        } else if (character == 'F') {
-            return 15;
-        } else if (character == 'G') {
-            return 16;
-        } else if (character == 'H') {
-            return 17;
-        } else if (character == 'J') {
-            return 18;
-        } else if (character == 'L') {
-            return 19;
-        } else if (character == 'M') {
-            return 20;
-        } else if (character == 'O') {
-            return 0;
-        } else if (character == 'N') {
-            return 21;    
-        } else if (character == 'P') {
-            return 22;
-        } else if (character == 'Q') {
-            return 9;    
-        } else if (character == 'R') {
-            return 23;
-        } else if (character == 'T') {
-            return 24;
-        } else if (character == 'U') {
-            return 25;
-        } else if (character == 'V') {
-            return 25;
-        } else if (character == 'W') {
-            return 28;    
-        } else if (character == 'Y') {
-            return 26;
-        } else if (character == ' ') {
-            return 27;
-        } else {
-            return 27;  // Return 27 (space) for any other characters
+        switch (character) {
+            case 'I':
+                return 1;
+            case 'Z':
+                return 2;
+            case 'S':
+                return 5;
+            case 'A':
+                return 10;
+            case 'B':
+                return 8;
+            case 'C':
+                return 12;
+            case 'D':
+                return 13;
+            case 'E':
+                return 14;
+            case 'F':
+                return 15;
+            case 'G':
+                return 16;
+            case 'H':
+                return 17;
+            case 'J':
+                return 18;
+            case 'L':
+                return 19;
+            case 'M':
+                return 20;
+            case 'O':
+                return 0;
+            case 'N':
+                return 21;
+            case 'P':
+                return 22;
+            case 'Q':
+                return 9;
+            case 'R':
+                return 23;
+            case 'T':
+                return 24;
+            case 'U':
+            case 'V':
+                return 25;
+            case 'W':
+                return 28;
+            case 'Y':
+                return 26;
+            case ' ':
+                return 27;
+            default:
+                return 27; // Return 27 (space) for any other characters
         }
     }
 }
