@@ -46,11 +46,6 @@ Overall, the QUAD7SHIFT library is a valuable resource for Arduino projects invo
 - Configurable refresh rate for display updating.
 - Works with ATmega-based Arduino UNO and NANO boards and ATtiny85 (or other ATtinys that use the same USI (Universal Serial Interface) module and same pins as the ATtiny85).
 
-    [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/Ds3k1fd5XGU/0.jpg)](https://youtu.be/Ds3k1fd5XGU)  
-  
-    [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/2jVDQSVcXQ0/0.jpg)](https://youtu.be/2jVDQSVcXQ0) 
-    
-    [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/irkmbyNkbE4/0.jpg)](https://youtu.be/irkmbyNkbE4)  
 
 ## Examples
 
