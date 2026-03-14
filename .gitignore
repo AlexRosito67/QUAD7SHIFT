@@ -33,3 +33,7 @@
 
 #Initialization files
 *.ini
+
+.vscode/
+.pio/
+
