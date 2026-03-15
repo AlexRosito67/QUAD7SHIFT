@@ -1,21 +1,38 @@
-# A GitHub Manifesto
-### Notes on contributing to my repositories
-Alex Rosito
-July 2023.
+# Contributing to QUAD7SHIFT
 
-[Copied from Jack Christensen's (Jan 2018) GitHub Manifesto]
+QUAD7SHIFT is a personal project created with care and dedication.
+These are the guidelines for contributing.
 
+## Bug Reports
 
-Surely Git and GitHub are wonderful tools. They make coding and collaboration so much easier. I'm equally impressed with the open source movement, and with the Arduino ecosystem in particular.
+Bug reports are always welcome. Please open an issue and include:
+- A clear description of the problem
+- A minimal, compilable example that reproduces the issue
+- Your hardware and software environment
 
-I'm just one guy, mostly a hobbyist. 
+We work primarily with AVR architecture. Issues on other platforms
+may be difficult to reproduce.
 
-Like many things, this has been somewhat of a double-edged sword. Especially since I tend to be a pretty busy guy with many varied interests.
+## Bug Reports vs. Support
 
-First, I am always interested in bug reports. Please raise an issue in the appropriate repository and please please please include a good, concise description of the issue and a Short, Self Contained, Correct (Compilable), Example (see [sscce.org](http://www.sscce.org/)). I will need to be able to reproduce the issue, with minimal hardware, and without installing a dozen other libraries. I work exclusively with the AVR architecture so most times I will not be able to reproduce issues on other platforms. 
+Bug reports are for problems with QUAD7SHIFT code — not for help
+with your own project. For general Arduino help please use the
+[Arduino forum](https://forum.arduino.cc/).
 
-Second, bug reports should always be for problems with *my* code. I will not use GitHub to help you with *your* code, even if you happen to be using one of my libraries. Please use the [Arduino forum](https://forum.arduino.cc/) or other such venue instead.
+## Pull Requests
 
-Finally, pull requests can be problematic, especially if they represent enhancements rather than fixes. I seldom intend my code to be all things to all people. This is mostly a hobby activity and I have very limited bandwidth. Reviewing and managing PRs requires time that I do not often have. Sometimes a PR will take a library in a direction that I'm not interested in. Sometimes a PR will be counter to my original design intent. No doubt the author of a PR thinks that their new feature is the best thing since canned beer, but if I don't happen to share that opinion, then I'll decline it. OTOH, I am certainly capable of making stupid mistakes and missing absolutely fundamental things, and I do appreciate it when these are pointed out.
+Pull requests for bug fixes are welcome. Enhancement PRs may be
+declined if they take the library in a direction outside its
+original scope. This is not personal — it is simply a matter of
+keeping the library focused and maintainable.
 
-All this to say, that if I do decline a request, please do not take it personally. Feel free to consider it my problem, not yours. At the end of the day, it's my code, and I reserve the right to decline issues or PRs for any reason, or for no reason at all. But here is the beauty of open source. You can always fork the repository and have your way with it.
+If a PR is declined, you are always welcome to fork the repository.
+
+## A Note
+
+This library was built with love, late nights, and the help of
+a few good friends. Treat it with the same respect.
+
+*Our daughter — made with pride.*
+
+*Alex Rosito & Iris — Valley Glen, Los Angeles, California*

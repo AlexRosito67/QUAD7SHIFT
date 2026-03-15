@@ -39,6 +39,24 @@ uint8_t QUAD7SHIFT::reverseBits(uint8_t b) {
     return pgm_read_byte(&(reverseLookUpTable[b & 0xF])) << 4 | pgm_read_byte(&(reverseLookUpTable[b >> 4]));
 }
 
+// Function to transfer a byte of data using the USI (Universal Serial Interface) on ATtiny microcontrollers
+#if defined(__AVR_ATtiny25__) || defined(__AVR_ATtiny45__) || defined(__AVR_ATtiny85__) || defined(__AVR_ATtiny261__) || defined(__AVR_ATtiny461__) || defined(__AVR_ATtiny861__)
+
+uint8_t QUAD7SHIFT::usiTransferByte(uint8_t data) {
+    USIDR = data;
+    USISR = (1 << USIOIF); // clear counter and flag
+    do {
+        USICR = (1 << USIWM0) |  // Three-wire mode
+                (1 << USICS1) |  // Software clock strobe
+                (1 << USICLK) |  // Software clock
+                (1 << USITC);    // Toggle clock
+    } while (!(USISR & (1 << USIOIF))); // Wait until 8 bits transferred
+    return USIDR;
+}
+
+#endif
+
+
 // Function to transfer a 16-bit result value to shift registers using SPI
 void QUAD7SHIFT::transferDigit(uint16_t result) {
     // Set the latch pin LOW to prepare the shift registers for data transfer
@@ -47,9 +65,9 @@ void QUAD7SHIFT::transferDigit(uint16_t result) {
     // Check if the code is being compiled for ATtiny85 or ATtiny13 microcontroller
     #if defined(__AVR_ATtiny25__) || defined(__AVR_ATtiny45__) || defined(__AVR_ATtiny85__) || defined(__AVR_ATtiny261__) || defined(__AVR_ATtiny461__) || defined(__AVR_ATtiny861__)
         // If compiling for ATtiny85 or similar MCUs, send the reversed lower byte first
-        SPI.transfer(reverseBits(result & 0xFF));
+        usiTransferByte(reverseBits(result & 0xFF));
         // Then, send the reversed higher byte second
-        SPI.transfer(reverseBits((result >> 8) & 0xFF));
+        usiTransferByte(reverseBits((result >> 8) & 0xFF));
     #endif
     #if defined (__AVR_ATmega328P__) || (__AVR_ATmega168__)
         // For other microcontrollers, directly send the 16-bit result using SPI.transfer16
@@ -236,12 +254,11 @@ void QUAD7SHIFT::begin(unsigned long refreshRate) {
     // Initialize the Serial Peripheral Interface (SPI)
     setRefreshRate(refreshRate);
     
-    SPI.begin();
-    
-    
+        
     // Setting the MCU pins as outputs. Needed for the SPI communication.
     #if defined(__AVR_ATmega328P__) || defined(__AVR_ATmega168__)
         DDRB |= (1 << DDB2) | (1 << DDB3) | (1 << DDB5);
+        SPI.begin();
     #endif
     #if defined(__AVR_ATtiny25__) || defined(__AVR_ATtiny45__) || defined(__AVR_ATtiny85__) || defined(__AVR_ATtiny261__) || defined(__AVR_ATtiny461__) || defined(__AVR_ATtiny861__)
         DDRB |= (1 << DDB0) | (1 << DDB1) | (1 << DDB2);

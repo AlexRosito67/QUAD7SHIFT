@@ -1,25 +1,25 @@
 # QUAD7SHIFT Library
 
-This library provides functions for interfacing with 4-digit seven-segment displays in Arduino projects.
+A lightweight Arduino library for driving 4-digit seven-segment displays using 74HC595 shift registers via SPI.
 
-The QUAD7SHIFT library is a useful and well-organized library for interfacing with 4-digit seven-segment displays in Arduino projects. It provides functions to initialize the display, print numbers (including floating-point numbers with decimal point positioning), and print strings on the display. The library also supports both common anode and common cathode configurations, making it versatile for different types of seven-segment displays.
+## Features
 
-The library is written in a modular and object-oriented manner, with well-commented code that enhances readability and understanding. The comments provide clear explanations of the code's functionality, which is helpful for documentation purposes and for users to understand how the library works.
-
-One notable feature is the use of PROGMEM to store data in program memory, which is a good optimization to conserve RAM. Additionally, the library provides support for both ATmega-based Arduino boards, ATtiny85, ATtiny25, ATtiny45, ATtiny261, ATtiny461 and ATtiny861, making it applicable to a broader range of Arduino platforms.
-
-While the library appears to be well-designed and useful for driving 4-digit seven-segment displays, it's essential to test it thoroughly in real-world scenarios and consider edge cases to ensure its robustness and reliability. Users should also check for compatibility with their specific hardware and ensure they follow the documentation for proper usage.
-
-Overall, the QUAD7SHIFT library is a valuable resource for Arduino projects involving 4-digit seven-segment displays and can save time and effort in developing such applications.
+- Supports both **common anode** and **common cathode** configurations
+- Print integers, floating-point numbers with decimal point positioning, and strings
+- Configurable refresh rate for display multiplexing
+- **No external dependencies** — USI implemented directly for ATtiny platforms
+- Compatible with ATmega-based Arduino UNO and NANO boards
+- Compatible with ATtiny85, ATtiny25, ATtiny45, ATtiny261, ATtiny461 and ATtiny861
+- PROGMEM used to store lookup tables — conserves RAM on small microcontrollers
+- Overflow (OVF) and negative (NEG) error display built-in
 
 ## Table of Contents
 
 - [Installation](#installation)
-- [Features](#features)
+- [Dependencies](#dependencies)
 - [Usage](#usage)
 - [Methods](#methods)
 - [Examples](#examples)
-- [Dependencies](#dependencies)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -27,83 +27,84 @@ Overall, the QUAD7SHIFT library is a valuable resource for Arduino projects invo
 
 ### Arduino IDE Library Manager (Recommended)
 
-1. Open the Arduino IDE.
-2. Go to "Sketch" -> "Include Library" -> "Manage Libraries...".
-3. In the Library Manager, search for "QUAD7SHIFT".
-4. Click the "Install" button for the "QUAD7SHIFT" library.
+1. Open the Arduino IDE
+2. Go to **Sketch** → **Include Library** → **Manage Libraries...**
+3. Search for `QUAD7SHIFT`
+4. Click **Install**
 
 ### Manual Installation
 
-1. Download the library from [GitHub](https://github.com/AlexRosito67/QUAD7SHIFT).
-2. Extract the downloaded ZIP file.
-3. Rename the extracted folder to "QUAD7SHIFT".
-4. Move the "QUAD7SHIFT" folder to your Arduino libraries folder. By default, it is located in "Documents/Arduino/libraries" on macOS and Linux, "My Documents\Arduino\libraries" on Windows.
-
-## Features
-
-- Support for both common anode and common cathode 4-digit seven-segment displays.
-- Print numbers (including floating-point numbers with decimal point positioning) and strings on the display.
-- Configurable refresh rate for display updating.
-- Works with ATmega-based Arduino UNO and NANO boards and ATtiny85 (or other ATtinys that use the same USI (Universal Serial Interface) module and same pins as the ATtiny85).
-
-  
-## Examples
-
-Check out the "examples" folder in this library for more usage examples and test sketches.
+1. Download the library from [GitHub](https://github.com/AlexRosito67/QUAD7SHIFT)
+2. Extract the ZIP file
+3. Rename the folder to `QUAD7SHIFT`
+4. Move it to your Arduino libraries folder:
+   - macOS/Linux: `Documents/Arduino/libraries`
+   - Windows: `My Documents\Arduino\libraries`
 
 ## Dependencies
 
-- For ATmega-based Arduino boards: SPI library. 
-    - LATCHPIN: ARDUINO UNO/NANO PIN 10
-    - DATAPIN:  ARDUINO UNO/NANO PIN 11 
-    - CLOCKPIN: ARDUINO UNO/NANO PIN 13
-- For ATtiny85, ATtiny25, ATtiny45, ATtiny261, ATtiny461 and ATtiny861: TinySPI library.
-    - LATCHPIN: ATITINY PIN PB0 / PIN 5
-    - DATAPIN:  ATITINY PIN PB1 / PIN 6
-    - CLOCKPIN: ATITINY PIN PB2 / PIN 7
+### ATmega-based boards (Arduino UNO, NANO)
+Built-in SPI library — no external dependencies required.
 
-Please make sure to install the appropriate library through the Arduino IDE Library Manager or by manually downloading it from their respective repositories.
+| Signal   | Pin |
+|----------|-----|
+| LATCHPIN | 10  |
+| DATAPIN  | 11  |
+| CLOCKPIN | 13  |
 
-## Contributing
+### ATtiny85, ATtiny25, ATtiny45, ATtiny261, ATtiny461, ATtiny861
+No external dependencies — USI (Universal Serial Interface) implemented directly.
 
-Please read CONTRIBUTING.md for information about contributing.
+| Signal   | Pin       |
+|----------|-----------|
+| LATCHPIN | PB0 / 5   |
+| DATAPIN  | PB1 / 6   |
+| CLOCKPIN | PB2 / 7   |
 
-## License
-
-Please read LICENSE.md.
-
-## Methods
-
-    - begin();        / Sets the refresh rate of the display to a default of 1000 milliseconds.
-    - begin(freshRate); / Sets the refresh rate to the desired refresh rate.
-    - getRefreshRate(); / Gets the refresh rate in an interactive manner.
-    - setRefreshRate(refreshRate); / Sets the desired refresh rate in an interactive manner. 
-    - print(integer); / MAX 9999 
-    - print(float);   / MAX 999.9 
-    - print(string);  / MAX LENGTH 4 or in the case of including points MAX LENGTH 8
-    
 ## Usage
-
 ```cpp
 #include <QUAD7SHIFT.h>
 
-// Create an instance of the QUAD7SHIFT class
 QUAD7SHIFT display(COMMON_ANODE);
 
 void setup() {
-  // Initialize the QUAD7SHIFT library
-  display.begin(); // Uses a default refresh rate of 1000
-  /* Or you could use
-   * display.begin(1000); 
-   * which is the default display refresh rate, of course you can change it to your needs
-  */
+  display.begin(); // Default refresh rate
+  // display.begin(1000); // Custom refresh rate in milliseconds
 }
 
 void loop() {
-  // Add your code here
-  display.print(1234);  // Print an integer number on the display
-  display.print(12.34); // Print a float number on the display
-  display.print("GOOD");      // Print a char string on the display    
-  display.print("G.O.O.D.");  // Print a char string with dots on the display 
+  display.print(1234);     // Integer — max 9999
+  display.print(12.34);    // Float — max 999.9
+  display.print("GOOD");   // String — max 4 characters
+  display.print("G.O.O.D."); // String with decimal points
 }
+```
 
+## Methods
+
+| Method | Description |
+|--------|-------------|
+| `begin()` | Initialize with default refresh rate |
+| `begin(refreshRate)` | Initialize with custom refresh rate (ms) |
+| `getRefreshRate()` | Returns current refresh rate |
+| `setRefreshRate(refreshRate)` | Sets refresh rate dynamically |
+| `print(integer)` | Print integer — max 9999 |
+| `print(float)` | Print float — max 999.9 |
+| `print(string)` | Print string — max 4 chars, or 8 with decimal points |
+
+## Examples
+
+Check out the `examples` folder for usage examples and test sketches.
+
+## Contributing
+
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for information about contributing.
+
+## License
+
+Please read [LICENSE.md](LICENSE.md).
+
+---
+
+*Created by Alex Rosito — Valley Glen, Los Angeles, California*
+*With the valuable assistance of Iris. Thank you, Iris*

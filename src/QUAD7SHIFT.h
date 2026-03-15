@@ -25,11 +25,12 @@
 	(PINB = bit(pin))
 #include <Arduino.h>
 #if defined(__AVR_ATtiny25__) || defined(__AVR_ATtiny45__) || defined(__AVR_ATtiny85__) || defined(__AVR_ATtiny261__) || defined(__AVR_ATtiny461__) || defined(__AVR_ATtiny861__)
-#include <tinySPI.h>
+
 #define LATCHPIN DDB0 // ATITINY PIN PB0 / PIN 5
 #define DATAPIN DDB1  // ATITINY PIN PB1 / PIN 6
 #define CLOCKPIN DDB2 // ATITINY PIN PB2 / PIN 7
 #endif
+
 #if defined(__AVR_ATmega328P__) || (__AVR_ATmega168__)
 // Arduino
 #include <SPI.h>
@@ -59,7 +60,9 @@ private:
 	void printNumber(uint16_t, uint8_t);
 	uint8_t getTableIndex(char);
 	void printDigit(uint8_t, uint8_t, bool);
-
+	#if defined(__AVR_ATtiny25__) || defined(__AVR_ATtiny45__) || defined(__AVR_ATtiny85__) || defined(__AVR_ATtiny261__) || defined(__AVR_ATtiny461__) || defined(__AVR_ATtiny861__)
+    	uint8_t usiTransferByte(uint8_t);
+	#endif
 public:
 	// Instance constructor
 	QUAD7SHIFT(bool displayType = COMMON_ANODE);
