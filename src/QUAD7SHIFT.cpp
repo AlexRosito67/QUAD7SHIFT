@@ -99,7 +99,7 @@ void QUAD7SHIFT::printDigit(uint8_t number, uint8_t position, bool point) {
 
 // Function to convert a floating-point number to fixed-point representation
 // with a specified number of decimal places
-unsigned int QUAD7SHIFT::fixedPointRepresentation(float number, uint8_t decimalPointPosition) {
+uint16_t QUAD7SHIFT::fixedPointRepresentation(float number, uint8_t decimalPointPosition) {
     /* Read the power of 10 corresponding to the desired decimal point position
        from the lookup table 'powersOf10' in program memory (Definition located in the QUAD7SHIFTata.h
        header file).
@@ -210,7 +210,7 @@ uint8_t QUAD7SHIFT::getTableIndex(char character)
             return 9;    
         } else if (character == 'R') {
             return 23;
-        } else if (character == 'T') {
+        unsigned int} else if (character == 'T') {
             return 24;
         } else if (character == 'U') {
             return 25;
@@ -332,7 +332,7 @@ void QUAD7SHIFT::print(const float number, uint8_t decimalPointPosition) {
     /* Convert the floating-point number to a scaled integer representation with the specified
        decimal point position
     */
-    uint8_t scaledNumber = fixedPointRepresentation(number, decimalPointPosition);
+    uint16_t scaledNumber = fixedPointRepresentation(number, decimalPointPosition);
 
     // Print the scaled number with the specified decimal point position
     printNumber(scaledNumber, decimalPointPosition);

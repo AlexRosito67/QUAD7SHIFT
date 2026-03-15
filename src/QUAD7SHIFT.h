@@ -55,7 +55,7 @@ private:
 	// Class private methods
 	uint8_t reverseBits(uint8_t);
 	void transferDigit(uint16_t);
-	unsigned int fixedPointRepresentation(float, uint8_t);
+	uint16_t fixedPointRepresentation(float, uint8_t);
 	void printNumber(uint16_t, uint8_t);
 	uint8_t getTableIndex(char);
 	void printDigit(uint8_t, uint8_t, bool);
