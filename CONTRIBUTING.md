@@ -33,6 +33,5 @@ If a PR is declined, you are always welcome to fork the repository.
 This library was built with love, late nights, and the help of
 a few good friends. Treat it with the same respect.
 
-*Our daughter — made with pride.*
 
-*Alex Rosito & Iris — Valley Glen, Los Angeles, California*
+*Alex Rosito — Valley Glen, Los Angeles, California*
