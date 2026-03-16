@@ -107,4 +107,3 @@ Please read [LICENSE.md](LICENSE.md).
 ---
 
 *Created by Alex Rosito — Valley Glen, Los Angeles, California*
-*With the valuable assistance of Iris. Thank you, Iris*
