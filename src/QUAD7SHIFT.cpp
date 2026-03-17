@@ -190,59 +190,86 @@ uint8_t QUAD7SHIFT::getTableIndex(char character)
         // Convert the character to uppercase to handle both uppercase and lowercase inputs
         character = toupper(character);
         // Check the character against known specific characters to find their respective indices
-        if (character == 'I') {
+
+        switch (character)
+        {
+        case 'I':
             return 1;
-        } else if (character == 'Z') {
+            break;
+        case 'Z':
             return 2;
-        } else if (character == 'S') {
+            break;
+        case 'S':
             return 5;
-        } else if (character == 'A') {
+            break;
+        case 'A':
             return 10;
-        } else if (character == 'B') {
+            break;
+        case 'B':
             return 8;
-        } else if (character == 'C') {
+            break;
+        case 'C':   
             return 12;
-        } else if (character == 'D') {
+            break;
+        case 'D':
             return 13;
-        } else if (character == 'E') {
+            break;
+        case 'E':
             return 14;
-        } else if (character == 'F') {
+            break;
+        case 'F':
             return 15;
-        } else if (character == 'G') {
+            break;
+        case 'G':
             return 16;
-        } else if (character == 'H') {
+            break;
+        case 'H':
             return 17;
-        } else if (character == 'J') {
+            break;
+        case 'J':
             return 18;
-        } else if (character == 'L') {
+            break;
+        case 'L':
             return 19;
-        } else if (character == 'M') {
+            break;
+        case 'M':
             return 20;
-        } else if (character == 'O') {
+            break;
+        case 'O':
             return 0;
-        } else if (character == 'N') {
+            break;
+        case 'N':
             return 21;    
-        } else if (character == 'P') {
+            break;
+        case 'P':   
             return 22;
-        } else if (character == 'Q') {
+            break;
+        case 'Q':
             return 9;    
-        } else if (character == 'R') {
+            break;
+        case 'R':
             return 23;
-        unsigned int} else if (character == 'T') {
+            break;
+        case 'T':
             return 24;
-        } else if (character == 'U') {
+            break;
+        case 'U' :
+        case 'V':
             return 25;
-        } else if (character == 'V') {
-            return 25;
-        } else if (character == 'W') {
-            return 28;    
-        } else if (character == 'Y') {
+            break;
+        case 'W':
+            return 28;
+            break;    
+        case 'Y':
             return 26;
-        } else if (character == ' ') {
-            return 27;
-        } else {
+            break;
+        
+        default:
             return 27;  // Return 27 (space) for any other characters
+            break;
         }
+
+
     }
 }
 
