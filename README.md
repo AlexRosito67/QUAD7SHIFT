@@ -2,6 +2,12 @@
 
 A lightweight Arduino library for driving 4-digit seven-segment displays using 74HC595 shift registers via SPI.
 
+
+## If I saved you time you can show your appreciation
+
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/AlexRosito67)
+
+
 ## Features
 
 - Supports both **common anode** and **common cathode** configurations
@@ -103,10 +109,6 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for information about contributin
 ## License
 
 Please read [LICENSE.md](LICENSE.md).
-
-## If I saved you time you can show your appreciations
-
-[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/AlexRosito67)
 
 ---
 
