@@ -11,7 +11,7 @@ A lightweight Arduino library for driving 4-digit seven-segment displays using 7
 ## Features
 
 - Supports both **common anode** and **common cathode** configurations
-- Print integers, floating-point numbers with decimal point positioning, and strings
+- Print integers, floats with configurable decimal point, and strings
 - Configurable refresh rate for display multiplexing
 - **No external dependencies** — USI implemented directly for ATtiny platforms
 - Compatible with ATmega-based Arduino UNO and NANO boards
@@ -28,6 +28,7 @@ A lightweight Arduino library for driving 4-digit seven-segment displays using 7
 - [Examples](#examples)
 - [Contributing](#contributing)
 - [License](#license)
+- [Used in the wild](#used-in-the-wild)
 
 ## Installation
 
@@ -109,6 +110,10 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for information about contributin
 ## License
 
 Please read [LICENSE.md](LICENSE.md).
+
+## Used in the wild
+
+QUAD7SHIFT was referenced in a technical article on [CSDN](https://wenku.csdn.net/answer/10mbatm661np) (China's largest developer community) covering ESP32-P4 SPI-driven 74HC595 cascading. The article cites QUAD7SHIFT as a reference implementation for cooperative shift register management with dynamic scanning on seven-segment displays.
 
 ---
 
