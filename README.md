@@ -118,9 +118,11 @@ Please read [LICENSE.md](LICENSE.md).
 
 ## Used in the wild
 
-QUAD7SHIFT was referenced in a technical article on [CSDN](https://wenku.csdn.net/answer/10mbatm661np) (China's largest developer community) covering ESP32-P4 SPI-driven 74HC595 cascading. The article cites QUAD7SHIFT as a reference implementation for cooperative shift register management with dynamic scanning on seven-segment displays.
+- QUAD7SHIFT was referenced in a technical article on [CSDN](https://wenku.csdn.net/answer/10mbatm661np) (China's largest developer community) covering ESP32-P4 SPI-driven 74HC595 cascading. The article cites QUAD7SHIFT as a reference implementation for cooperative shift register management with dynamic scanning on seven-segment displays.
 
-A deep-dive on why most 74HC595 display drivers flicker — and how QUAD7SHIFT avoids it — is available on [DEV Community](https://dev.to/alexrosito67/why-most-74hc595-display-drivers-flicker-and-how-quad7shift-avoids-it-without-trying-50eb).
+- A deep-dive on why most 74HC595 display drivers flicker — and how QUAD7SHIFT avoids it — is available on [DEV Community](https://dev.to/alexrosito67/why-most-74hc595-display-drivers-flicker-and-how-quad7shift-avoids-it-without-trying-50eb).
+
+- A technical analysis in Japanese covering the latch boundary mechanism, multiplexing stability, and platform comparisons (ESP32, Raspberry Pi, RP2040) was published on [lilting channel](https://lilting.ch/articles/74hc595-display-flicker-quad7shift) (April 29, 2026), citing QUAD7SHIFT as a reference implementation.
 
 ---
 
