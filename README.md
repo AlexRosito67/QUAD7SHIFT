@@ -24,6 +24,7 @@ A lightweight Arduino library for driving 4-digit seven-segment displays using 7
 - [Installation](#installation)
 - [Dependencies](#dependencies)
 - [Usage](#usage)
+- [Demo](#demo)
 - [Methods](#methods)
 - [Examples](#examples)
 - [Contributing](#contributing)
@@ -87,6 +88,10 @@ void loop() {
 }
 ```
 
+## Demo
+
+[![QUAD7SHIFT Demo](https://img.youtube.com/vi/2jVDQSVcXQ0/0.jpg)](https://www.youtube.com/watch?v=2jVDQSVcXQ0)
+
 ## Methods
 
 | Method | Description |
@@ -114,6 +119,8 @@ Please read [LICENSE.md](LICENSE.md).
 ## Used in the wild
 
 QUAD7SHIFT was referenced in a technical article on [CSDN](https://wenku.csdn.net/answer/10mbatm661np) (China's largest developer community) covering ESP32-P4 SPI-driven 74HC595 cascading. The article cites QUAD7SHIFT as a reference implementation for cooperative shift register management with dynamic scanning on seven-segment displays.
+
+A deep-dive on why most 74HC595 display drivers flicker — and how QUAD7SHIFT avoids it — is available on [DEV Community](https://dev.to/alexrosito67/why-most-74hc595-display-drivers-flicker-and-how-quad7shift-avoids-it-without-trying-50eb).
 
 ---
 
