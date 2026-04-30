@@ -9,6 +9,10 @@ Designed for Arduino UNO/NANO and ATtiny — using hardware SPI (or USI) for uni
 
 ## If I saved you time you can show your appreciation
 
+If this library helped you solve flickering or simplify your display setup,consider starring the repo or sharing your project.
+
+Or
+
 [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/AlexRosito67)
 
 
