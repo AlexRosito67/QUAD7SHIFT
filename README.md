@@ -115,8 +115,8 @@ void loop() {
 
 ## Why QUAD7SHIFT?
 Most 74HC595 drivers flicker due to non-atomic updates and timing jitter.
-
 This video shows the difference:
+
 [![QUAD7SHIFT Demo](https://img.youtube.com/vi/2jVDQSVcXQ0/0.jpg)](https://www.youtube.com/watch?v=2jVDQSVcXQ0)
 
 ## Methods
