@@ -1,6 +1,10 @@
 # QUAD7SHIFT Library
 
-A lightweight Arduino library for driving 4-digit seven-segment displays using 74HC595 shift registers via SPI.
+Fix flickering and ghosting in 74HC595-driven 7-segment displays.
+
+QUAD7SHIFT ensures stable multiplexed output by treating segment + digit selection as a single atomic 16-bit state and latching only once per update.
+
+Designed for Arduino UNO/NANO and ATtiny — using hardware SPI (or USI) for uninterrupted transfers.
 
 
 ## If I saved you time you can show your appreciation
@@ -20,16 +24,37 @@ A lightweight Arduino library for driving 4-digit seven-segment displays using 7
 - Overflow (OVF) and negative (NEG) error display built-in
 
 ## Table of Contents
-
+- [The Problem](#the-problem)
+- [The Solution](the-solution)
 - [Installation](#installation)
 - [Dependencies](#dependencies)
 - [Usage](#usage)
-- [Demo](#demo)
+- [Why QUAD7SHIFT](##why-QUAD7SHIFT?)
 - [Methods](#methods)
 - [Examples](#examples)
 - [Contributing](#contributing)
 - [License](#license)
 - [Used in the wild](#used-in-the-wild)
+
+## The Problem
+
+Typical implementations use multiple shiftOut() calls or separate updates for segments and digit selection.
+
+This creates intermediate states that can appear as:
+- Ghosting between digits
+- Uneven brightness
+- Visible flicker under load or interrupts
+
+## The Solution
+
+QUAD7SHIFT:
+- Builds a full 16-bit display state
+- Sends it in one uninterrupted transfer (SPI/USI)
+- Latches only once per update
+
+No intermediate states ever reach the output.
+
+
 
 ## Installation
 
@@ -88,8 +113,10 @@ void loop() {
 }
 ```
 
-## Demo
+## Why QUAD7SHIFT?
+Most 74HC595 drivers flicker due to non-atomic updates and timing jitter.
 
+This video shows the difference:
 [![QUAD7SHIFT Demo](https://img.youtube.com/vi/2jVDQSVcXQ0/0.jpg)](https://www.youtube.com/watch?v=2jVDQSVcXQ0)
 
 ## Methods
@@ -117,6 +144,14 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for information about contributin
 Please read [LICENSE.md](LICENSE.md).
 
 ## Used in the wild
+
+- QUAD7SHIFT has been referenced in:
+
+- DEV Community — deep dive into flickering causes and solutions
+- Japanese technical analysis (lilting.ch) — latch boundary and multiplexing behavior
+- CSDN (China) — ESP32-P4 SPI cascading reference
+
+- This library is used as a **reference implementation** for stable 74HC595 display driving.
 
 - QUAD7SHIFT was referenced in a technical article on [CSDN](https://wenku.csdn.net/answer/10mbatm661np) (China's largest developer community) covering ESP32-P4 SPI-driven 74HC595 cascading. The article cites QUAD7SHIFT as a reference implementation for cooperative shift register management with dynamic scanning on seven-segment displays.
 
