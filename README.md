@@ -163,6 +163,9 @@ Please read [LICENSE.md](LICENSE.md).
 
 - A technical analysis in Japanese covering the latch boundary mechanism, multiplexing stability, and platform comparisons (ESP32, Raspberry Pi, RP2040) was published on [lilting channel](https://lilting.ch/articles/74hc595-display-flicker-quad7shift) (April 29, 2026), citing QUAD7SHIFT as a reference implementation.
 
+- * **Featured on StartupSchool (South Korea):** [Why most 74HC595 display drivers flicker and how QUAD7SHIFT avoids it](https://startupschool.cc/news/why-most-74hc595-display-drivers-flicker-and-how-quad7shift-avoids-it-without-trying-18799a)
+> *"This architecture keenly identifies the risk of code that 'just works but remains unstable'. Achieving design precision by aligning with hardware physical traits, like atomic transmission, elevates product status to industrial-grade standards."* — **StartupSchool Curator Review*
+
 ---
 
 *Created by Alex Rosito — Valley Glen, Los Angeles, California*
