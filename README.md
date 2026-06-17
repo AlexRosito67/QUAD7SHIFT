@@ -149,26 +149,25 @@ Please read [LICENSE.md](LICENSE.md).
 
 ## Used in the wild
 
-- QUAD7SHIFT has been referenced in:
+## Used in the wild
 
-- * **Academic Integration:** This repository has been included in the computational instrumentation resources curated by the **KBK Instrumentasi Komputasi - [UNNES](https://github.com/KBK-Instrumentasi-Komputasi-UNNES/fnn/blob/main/repositories.txt)** (Universitas Negeri Semarang, Indonesia).
+**QUAD7SHIFT** has crossed borders, serving as a global reference implementation for stable, flicker-free 74HC595 display driving across academic, corporate, and developer communities:
 
-- * **Community Features:** Featured and reviewed in international development circles, including technical curations in Japan ([`TheNote.app`](https://thenote.app/post/ja/zhi-yue-hanakunatsuta-gui-lu-haren-yi-dehanai-tamugicz3n)) highlighting the core philosophy of hardware discipline and efficient driver design.
+### 🎓 Academic & Institutional Integration
+* **Academic Integration:** This repository has been included in the computational instrumentation resources curated by the **KBK Instrumentasi Komputasi - [UNNES](https://github.com/KBK-Instrumentasi-Komputasi-UNNES/fnn/blob/main/repositories.txt)** (Universitas Negeri Semarang, Indonesia).
 
-- DEV Community — deep dive into flickering causes and solutions
-- Japanese technical analysis (lilting.ch) — latch boundary and multiplexing behavior
-- CSDN (China) — ESP32-P4 SPI cascading reference
+### 📰 Featured Technical Reviews & Analyses
+* **Featured on StartupSchool (South Korea):** [Why most 74HC595 display drivers flicker and how QUAD7SHIFT avoids it](https://startupschool.cc/news/why-most-74hc595-display-drivers-flicker-and-how-quad7shift-avoids-it-without-trying-18799a)
+  > *"This architecture keenly identifies the risk of code that 'just works but remains unstable'. Achieving design precision by aligning with hardware physical traits, like atomic transmission, elevates product status to industrial-grade standards."* — **StartupSchool Curator Review**
+* **Community Features (Japan):** Featured and reviewed in international development circles, including technical curations in Japan ([`TheNote.app`](https://thenote.app/post/ja/zhi-yue-hanakunatsuta-gui-lu-haren-yi-dehanai-tamugicz3n)) highlighting the core philosophy of hardware discipline and efficient driver design.
+* **Japanese Technical Analysis ([lilting channel](https://lilting.ch/articles/74hc595-display-flicker-quad7shift)):** A technical analysis covering the latch boundary mechanism, multiplexing stability, and platform comparisons (ESP32, Raspberry Pi, RP2040) published on April 29, 2026, citing QUAD7SHIFT as a reference implementation.
 
-- This library is used as a **reference implementation** for stable 74HC595 display driving.
+### 💻 Developer Communities & References
+* **CSDN (China):** A technical article on [CSDN](https://wenku.csdn.net/answer/10mbatm661np) (China's largest developer community) covering ESP32-P4 SPI-driven 74HC595 cascading. The article cites QUAD7SHIFT as a reference implementation for cooperative shift register management with dynamic scanning on seven-segment displays.
+* **DEV Community (Global):** A deep-dive on why most 74HC595 display drivers flicker — and how QUAD7SHIFT avoids it — is available on [DEV Community](https://dev.to/alexrosito67/why-most-74hc595-display-drivers-flicker-and-how-quad7shift-avoids-it-without-trying-50eb).
 
-- QUAD7SHIFT was referenced in a technical article on [CSDN](https://wenku.csdn.net/answer/10mbatm661np) (China's largest developer community) covering ESP32-P4 SPI-driven 74HC595 cascading. The article cites QUAD7SHIFT as a reference implementation for cooperative shift register management with dynamic scanning on seven-segment displays.
-
-- A deep-dive on why most 74HC595 display drivers flicker — and how QUAD7SHIFT avoids it — is available on [DEV Community](https://dev.to/alexrosito67/why-most-74hc595-display-drivers-flicker-and-how-quad7shift-avoids-it-without-trying-50eb).
-
-- A technical analysis in Japanese covering the latch boundary mechanism, multiplexing stability, and platform comparisons (ESP32, Raspberry Pi, RP2040) was published on [lilting channel](https://lilting.ch/articles/74hc595-display-flicker-quad7shift) (April 29, 2026), citing QUAD7SHIFT as a reference implementation.
-
-- * **Featured on StartupSchool (South Korea):** [Why most 74HC595 display drivers flicker and how QUAD7SHIFT avoids it](https://startupschool.cc/news/why-most-74hc595-display-drivers-flicker-and-how-quad7shift-avoids-it-without-trying-18799a)
-> *"This architecture keenly identifies the risk of code that 'just works but remains unstable'. Achieving design precision by aligning with hardware physical traits, like atomic transmission, elevates product status to industrial-grade standards."* — **StartupSchool Curator Review*
+---
+*This library is used as a **reference implementation** for stable 74HC595 display driving.*
 
 ---
 
