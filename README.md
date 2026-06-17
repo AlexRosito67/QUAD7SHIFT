@@ -147,7 +147,6 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for information about contributin
 
 Please read [LICENSE.md](LICENSE.md).
 
-## Used in the wild
 
 ## Used in the wild
 
