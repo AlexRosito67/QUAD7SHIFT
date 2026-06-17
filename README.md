@@ -151,6 +151,10 @@ Please read [LICENSE.md](LICENSE.md).
 
 - QUAD7SHIFT has been referenced in:
 
+- * **Academic Integration:** This repository has been included in the computational instrumentation resources curated by the **KBK Instrumentasi Komputasi - [UNNES](https://github.com/KBK-Instrumentasi-Komputasi-UNNES/fnn/blob/main/repositories.txt)** (Universitas Negeri Semarang, Indonesia).
+
+- * **Community Features:** Featured and reviewed in international development circles, including technical curations in Japan ([`TheNote.app`](https://thenote.app/post/ja/zhi-yue-hanakunatsuta-gui-lu-haren-yi-dehanai-tamugicz3n)) highlighting the core philosophy of hardware discipline and efficient driver design.
+
 - DEV Community — deep dive into flickering causes and solutions
 - Japanese technical analysis (lilting.ch) — latch boundary and multiplexing behavior
 - CSDN (China) — ESP32-P4 SPI cascading reference
